@@ -20,10 +20,13 @@ jobs:
           export SSH_AUTH_SOCK=/tmp/ssh_agent.sock
           touch $SSH_AUTH_SOCK
           
+          touch ${HOME}/.gitconfig
+          
           set -x
           set +e
           source commodore_command.sh
-          commodore component new fortune
+          mkdir -p dependencies/fortune
+          commodore component new fortune --output-dir dependencies/fortune
           ls -R dependencies/fortune
           commodore component compile dependencies/fortune
           ls -R dependencies/fortune
