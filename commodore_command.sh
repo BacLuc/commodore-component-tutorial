@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# renovate: datasource=docker depName=projectsyn/commodore
 COMMODORE_VERSION="v1.3.2"
 
 commodore() {
